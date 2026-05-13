@@ -2,13 +2,15 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Data Analytics Projects</title>
+<title>Raji | Data Analytics Projects</title>
+
+<script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
 
 <style>
 body {
   margin: 0;
   font-family: Arial;
-  background: #f6f7fb;
+  background: #f5f7fb;
   color: #111;
 }
 
@@ -16,34 +18,76 @@ body {
 .header {
   background: #111827;
   color: white;
-  padding: 18px;
-  text-align: center;
+  padding: 14px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
 .header h1 {
+  font-size: 18px;
+  margin: 0;
+}
+
+.header p {
+  font-size: 12px;
+  margin: 0;
+  color: #cbd5e1;
+}
+
+/* LAYOUT TOP */
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 10%;
+}
+
+.intro {
+  max-width: 500px;
+}
+
+.intro h2 {
   margin: 0;
   font-size: 22px;
 }
 
-.header p {
-  margin: 5px 0 0;
+.intro p {
   font-size: 13px;
-  color: #cbd5e1;
+  color: #555;
 }
 
-/* CONTAINER */
-.container {
-  width: 85%;
-  margin: auto;
-  padding: 20px 0;
+/* FILTER BUTTONS */
+.filters {
+  margin: 20px 10%;
+}
+
+button {
+  padding: 8px 12px;
+  border: none;
+  margin-right: 8px;
+  border-radius: 6px;
+  cursor: pointer;
+  background: #e5e7eb;
+  font-size: 12px;
+}
+
+button.active {
+  background: #111827;
+  color: white;
 }
 
 /* GRID */
+.container {
+  width: 85%;
+  margin: auto;
+}
+
 .grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 15px;
-  margin-top: 20px;
+  margin-top: 10px;
 }
 
 /* CARD */
@@ -51,28 +95,27 @@ body {
   background: white;
   border-radius: 10px;
   padding: 15px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  transition: 0.2s;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+  transition: 0.3s;
 }
 
 .card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-6px);
 }
 
 .card h3 {
   margin: 0;
-  font-size: 16px;
-  color: #111827;
+  font-size: 15px;
 }
 
 .card p {
-  font-size: 13px;
+  font-size: 12px;
   color: #555;
-  margin: 8px 0;
 }
 
 .card a {
   display: inline-block;
+  margin-top: 8px;
   padding: 6px 10px;
   background: #111827;
   color: white;
@@ -81,15 +124,14 @@ body {
   font-size: 12px;
 }
 
-.card a:hover {
-  background: #374151;
+/* LOTTIE */
+.lottie {
+  width: 140px;
 }
 
-/* SECTION TITLE */
-.title {
-  font-size: 16px;
-  margin-top: 20px;
-  color: #111827;
+/* HIDE CLASS */
+.hide {
+  display: none;
 }
 
 </style>
@@ -97,44 +139,87 @@ body {
 
 <body>
 
+<!-- HEADER -->
 <div class="header">
   <h1>📊 Data Analytics Projects</h1>
   <p>Power BI • Excel • Dashboards</p>
 </div>
 
+<!-- TOP SECTION -->
+<div class="top">
+
+  <div class="intro">
+    <h2>Hi, I build data dashboards 📈</h2>
+    <p>Clean, interactive analytics projects using Power BI and Excel.</p>
+  </div>
+
+  <lottie-player class="lottie"
+    src="https://assets2.lottiefiles.com/packages/lf20_jcikwtux.json"
+    background="transparent"
+    speed="1"
+    loop
+    autoplay>
+  </lottie-player>
+
+</div>
+
+<!-- FILTERS -->
+<div class="filters">
+  <button class="active" onclick="filter('all')">All</button>
+  <button onclick="filter('powerbi')">Power BI</button>
+  <button onclick="filter('excel')">Excel</button>
+</div>
+
+<!-- PROJECTS -->
 <div class="container">
 
-  <div class="title">My Projects</div>
+<div class="grid">
 
-  <div class="grid">
+  <div class="card powerbi">
+    <h3>Zomato Dashboard</h3>
+    <p>Global restaurant analysis</p>
+    <a href="https://github.com/Raji-44/Data-Analytics-Projects/tree/main/Zomato-Dashboard">Open</a>
+  </div>
 
-    <div class="card">
-      <h3>Zomato Dashboard</h3>
-      <p>Global restaurant analysis (16 countries)</p>
-      <a href="https://github.com/Raji-44/Data-Analytics-Projects/tree/main/Zomato-Dashboard">Open</a>
-    </div>
+  <div class="card powerbi">
+    <h3>Superstore Dashboard</h3>
+    <p>$2.30M sales analysis</p>
+    <a href="https://github.com/Raji-44/Data-Analytics-Projects/tree/main/Superstore-Dashboard">Open</a>
+  </div>
 
-    <div class="card">
-      <h3>Superstore Dashboard</h3>
-      <p>$2.30M sales & profit analysis</p>
-      <a href="https://github.com/Raji-44/Data-Analytics-Projects/tree/main/Superstore-Dashboard">Open</a>
-    </div>
+  <div class="card powerbi">
+    <h3>Women Insights</h3>
+    <p>Income & job trends</p>
+    <a href="https://github.com/Raji-44/Data-Analytics-Projects/tree/main/Women-Part-Time-Work-Insights">Open</a>
+  </div>
 
-    <div class="card">
-      <h3>Women Insights</h3>
-      <p>Income & job analysis (150 respondents)</p>
-      <a href="https://github.com/Raji-44/Data-Analytics-Projects/tree/main/Women-Part-Time-Work-Insights">Open</a>
-    </div>
-
-    <div class="card">
-      <h3>Vehicle Sales</h3>
-      <p>$9.8M Excel dashboard</p>
-      <a href="https://github.com/Raji-44/Data-Analytics-Projects/tree/main/Global-Vehicle-Sales-Dashboard">Open</a>
-    </div>
-
+  <div class="card excel">
+    <h3>Vehicle Sales</h3>
+    <p>$9.8M Excel dashboard</p>
+    <a href="https://github.com/Raji-44/Data-Analytics-Projects/tree/main/Global-Vehicle-Sales-Dashboard">Open</a>
   </div>
 
 </div>
+
+</div>
+
+<script>
+function filter(type) {
+  let cards = document.querySelectorAll(".card");
+  let buttons = document.querySelectorAll("button");
+
+  buttons.forEach(btn => btn.classList.remove("active"));
+  event.target.classList.add("active");
+
+  cards.forEach(card => {
+    if(type === "all") {
+      card.style.display = "block";
+    } else {
+      card.style.display = card.classList.contains(type) ? "block" : "none";
+    }
+  });
+}
+</script>
 
 </body>
 </html>
