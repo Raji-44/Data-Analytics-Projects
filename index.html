@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
 <meta charset="UTF-8">
 <title>Raji | Data Portfolio</title>
@@ -7,77 +7,89 @@
 <style>
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0f172a;
+  font-family: Arial;
+  background: #f5f7fb;
+  color: #111;
+}
+
+/* HEADER */
+.header {
+  background: #1f3b57;
   color: white;
-}
-
-/* TOP BAR */
-header {
-  padding: 20px;
+  padding: 25px;
   text-align: center;
-  background: #1e293b;
 }
 
-header h1 {
+.header h1 {
   margin: 0;
-  font-size: 28px;
+  font-size: 26px;
 }
 
-header p {
-  margin: 5px 0 0;
-  color: #94a3b8;
+.header p {
+  margin-top: 5px;
+  font-size: 14px;
+  opacity: 0.8;
 }
 
-/* SECTION */
+/* CONTAINER */
 .container {
   width: 85%;
   margin: auto;
-  padding: 30px 0;
+  padding: 25px 0;
 }
 
-/* CARDS */
+/* SECTION TITLE */
+h2 {
+  margin-top: 30px;
+  color: #1f3b57;
+}
+
+/* GRID */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 15px;
 }
 
+/* CARD */
 .card {
-  background: #1e293b;
-  padding: 20px;
-  border-radius: 12px;
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-5px);
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .card h3 {
-  color: #38bdf8;
-  margin-top: 0;
+  margin: 0;
+  color: #1f3b57;
+}
+
+.card p {
+  font-size: 13px;
+  color: #555;
 }
 
 .card a {
   display: inline-block;
   margin-top: 10px;
-  padding: 8px 12px;
-  background: #38bdf8;
-  color: black;
+  padding: 6px 10px;
+  background: #1f3b57;
+  color: white;
   text-decoration: none;
-  border-radius: 6px;
-  font-weight: bold;
+  border-radius: 5px;
+  font-size: 13px;
 }
 
 .card a:hover {
-  background: #0ea5e9;
+  background: #163047;
 }
 
 /* ABOUT */
 .about {
-  margin-top: 20px;
-  color: #cbd5e1;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  margin-top: 10px;
 }
 
 </style>
@@ -85,19 +97,17 @@ header p {
 
 <body>
 
-<header>
+<div class="header">
   <h1>📊 Raji - Data Analytics Portfolio</h1>
-  <p>Power BI | Excel | Data Visualization</p>
-</header>
+  <p>Power BI • Excel • Data Visualization</p>
+</div>
 
 <div class="container">
 
+  <h2>👋 About</h2>
   <div class="about">
-    <h2>👋 About Me</h2>
-    <p>
-      I am a Data Analytics enthusiast skilled in Power BI and Excel.
-      I create dashboards to convert raw data into business insights.
-    </p>
+    I am a Data Analytics enthusiast skilled in Power BI and Excel.  
+    I build dashboards that turn raw data into business insights.
   </div>
 
   <h2>📌 Projects</h2>
@@ -106,25 +116,25 @@ header p {
 
     <div class="card">
       <h3>Zomato Dashboard</h3>
-      <p>Restaurant analysis across 16 countries.</p>
+      <p>16-country restaurant analysis</p>
       <a href="https://github.com/Raji-44/Data-Analytics-Projects/tree/main/Zomato-Dashboard">View</a>
     </div>
 
     <div class="card">
       <h3>Superstore Dashboard</h3>
-      <p>$2.30M sales & profit analysis.</p>
+      <p>$2.30M sales analysis</p>
       <a href="https://github.com/Raji-44/Data-Analytics-Projects/tree/main/Superstore-Dashboard">View</a>
     </div>
 
     <div class="card">
       <h3>Women Insights</h3>
-      <p>Income & job trends analysis.</p>
+      <p>Job & income patterns</p>
       <a href="https://github.com/Raji-44/Data-Analytics-Projects/tree/main/Women-Part-Time-Work-Insights">View</a>
     </div>
 
     <div class="card">
       <h3>Vehicle Sales</h3>
-      <p>$9.8M Excel dashboard analysis.</p>
+      <p>$9.8M Excel analysis</p>
       <a href="https://github.com/Raji-44/Data-Analytics-Projects/tree/main/Global-Vehicle-Sales-Dashboard">View</a>
     </div>
 
