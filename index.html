@@ -2,126 +2,173 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Raji - Data Analytics Portfolio</title>
+<title>Raji | Data Analytics Portfolio</title>
 
 <style>
-  body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    background: #f4f6f8;
-  }
+html {
+  scroll-behavior: smooth;
+}
 
-  header {
-    background: #1f4e79;
-    color: white;
-    padding: 40px;
-    text-align: center;
-  }
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #0f172a;
+  color: white;
+}
 
-  header h1 {
-    margin: 0;
-    font-size: 32px;
-  }
+/* NAVBAR */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(15, 23, 42, 0.9);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  padding: 15px;
+  z-index: 1000;
+}
 
-  header p {
-    margin-top: 10px;
-    font-size: 16px;
-  }
+nav a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: bold;
+}
 
-  .container {
-    width: 85%;
-    margin: auto;
-    padding: 30px 0;
-  }
+nav a:hover {
+  color: #38bdf8;
+}
 
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 20px;
-  }
+/* HEADER */
+header {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #0f172a, #1e3a8a);
+}
 
-  .card {
-    background: white;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    transition: 0.3s;
-  }
+header h1 {
+  font-size: 50px;
+  margin: 0;
+}
 
-  .card:hover {
-    transform: translateY(-5px);
-  }
+header p {
+  font-size: 18px;
+  color: #cbd5e1;
+}
 
-  .card h3 {
-    margin-top: 0;
-    color: #1f4e79;
-  }
+/* SECTIONS */
+section {
+  padding: 80px 10%;
+}
 
-  .card a {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 8px 12px;
-    background: #1f4e79;
-    color: white;
-    text-decoration: none;
-    border-radius: 6px;
-  }
+/* CARDS */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
+}
 
-  .card a:hover {
-    background: #163a5c;
-  }
+.card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 15px;
+  transition: 0.4s;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
 
-  footer {
-    text-align: center;
-    padding: 20px;
-    background: #1f4e79;
-    color: white;
-    margin-top: 30px;
-  }
+.card:hover {
+  transform: translateY(-10px);
+  background: #334155;
+}
+
+.card h3 {
+  margin-top: 0;
+  color: #38bdf8;
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 10px;
+  padding: 8px 12px;
+  background: #38bdf8;
+  color: black;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+.card a:hover {
+  background: #0ea5e9;
+}
+
+/* FOOTER */
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #0f172a;
+  border-top: 1px solid #334155;
+}
+
 </style>
-
 </head>
 
 <body>
 
-<header>
-  <h1>📊 Raji - Data Analytics Portfolio</h1>
-  <p>Power BI • Excel • Data Visualization Projects</p>
+<nav>
+  <a href="#home">Home</a>
+  <a href="#projects">Projects</a>
+  <a href="#about">About</a>
+</nav>
+
+<header id="home">
+  <h1>📊 Raji</h1>
+  <p>Data Analyst | Power BI | Excel | Data Visualization</p>
 </header>
 
-<div class="container">
-
+<section id="projects">
   <h2>📌 Projects</h2>
 
   <div class="grid">
 
     <div class="card">
       <h3>Zomato Dashboard</h3>
-      <p>Restaurant analysis across 16 countries.</p>
-      <a href="https://github.com/Raji-44/Data-Analytics-Projects/tree/main/Zomato-Dashboard">View Project</a>
+      <p>Global restaurant analysis across 16 countries.</p>
+      <a href="https://github.com/Raji-44/Data-Analytics-Projects/tree/main/Zomato-Dashboard">View</a>
     </div>
 
     <div class="card">
       <h3>Superstore Dashboard</h3>
-      <p>Sales & profit analysis ($2.30M dataset).</p>
-      <a href="https://github.com/Raji-44/Data-Analytics-Projects/tree/main/Superstore-Dashboard">View Project</a>
+      <p>$2.30M sales & profit analysis.</p>
+      <a href="https://github.com/Raji-44/Data-Analytics-Projects/tree/main/Superstore-Dashboard">View</a>
     </div>
 
     <div class="card">
-      <h3>Women Work Insights</h3>
-      <p>Income & job trend analysis (150 respondents).</p>
-      <a href="https://github.com/Raji-44/Data-Analytics-Projects/tree/main/Women-Part-Time-Work-Insights">View Project</a>
+      <h3>Women Insights</h3>
+      <p>Income & job trends analysis.</p>
+      <a href="https://github.com/Raji-44/Data-Analytics-Projects/tree/main/Women-Part-Time-Work-Insights">View</a>
     </div>
 
     <div class="card">
-      <h3>Vehicle Sales Dashboard</h3>
-      <p>Excel-based $9.8M sales analysis.</p>
-      <a href="https://github.com/Raji-44/Data-Analytics-Projects/tree/main/Global-Vehicle-Sales-Dashboard">View Project</a>
+      <h3>Vehicle Sales</h3>
+      <p>$9.8M Excel dashboard analysis.</p>
+      <a href="https://github.com/Raji-44/Data-Analytics-Projects/tree/main/Global-Vehicle-Sales-Dashboard">View</a>
     </div>
 
   </div>
+</section>
 
-</div>
+<section id="about">
+  <h2>👨‍💻 About Me</h2>
+  <p>
+    I am a Data Analytics enthusiast skilled in Power BI, Excel, and data visualization.
+    I love transforming raw data into meaningful insights for business decisions.
+  </p>
+</section>
 
 <footer>
   © 2026 Raji | Data Analytics Portfolio
