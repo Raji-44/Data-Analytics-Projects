@@ -3,212 +3,429 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Raji — Data Analytics Portfolio</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<title>Data Analytics Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 
 <style>
-:root{
-  --bg:#080c14;
-  --surface:#111827;
-  --text:#e2e8f0;
-  --muted:#64748b;
-  --accent:#00d4ff;
-  --border:rgba(255,255,255,.08);
+
+* { margin: 0; padding: 0; box-sizing: border-box; }
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background: #0f1117;
+  color: #e2e8f0;
+  overflow-x: hidden;
 }
 
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  font-family:DM Sans;
-  background:var(--bg);
-  color:var(--text);
-  overflow-x:hidden;
+/* ── NAV ── */
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 48px;
+  background: rgba(15,17,23,0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255,255,255,0.06);
+  position: sticky;
+  top: 0;
+  z-index: 100;
 }
 
-/* background grid */
-body::before{
-  content:"";
-  position:fixed;inset:0;
-  background-image:linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
-  linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
-  background-size:40px 40px;
-  z-index:0;
+.logo {
+  font-size: 17px;
+  font-weight: 700;
+  color: #fff;
 }
 
-/* HERO */
-.hero{
-  min-height:100vh;
-  display:flex;
-  flex-direction:column;
-  justify-content:center;
-  align-items:center;
-  text-align:center;
-  padding:60px 20px;
-  position:relative;
-  z-index:1;
-}
-.hero h1{
-  font-family:Syne;
-  font-size:clamp(34px,6vw,64px);
-  font-weight:800;
-}
-.hero h1 span{color:var(--accent)}
-.hero p{color:var(--muted);max-width:520px;margin-top:12px}
-.btn{
-  margin-top:20px;
-  background:var(--accent);
-  color:#000;
-  padding:10px 18px;
-  border-radius:8px;
-  text-decoration:none;
-  font-weight:700;
+.logo span { color: #38bdf8; }
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 32px;
 }
 
-/* SECTIONS */
-.section{
-  max-width:1100px;
-  margin:auto;
-  padding:70px 20px;
-  position:relative;
-  z-index:1;
-}
-.title{
-  font-family:Syne;
-  font-size:28px;
-  margin-bottom:25px;
-}
-.title span{color:var(--accent)}
-
-/* ABOUT */
-.about{
-  background:rgba(255,255,255,.03);
-  padding:20px;
-  border-radius:12px;
-  border:1px solid var(--border);
-  color:var(--muted);
-  line-height:1.7;
+.nav-links a {
+  text-decoration: none;
+  color: #94a3b8;
+  font-size: 14px;
+  font-weight: 500;
+  transition: color 0.2s;
 }
 
-/* GRID */
-.grid{
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-  gap:16px;
+.nav-links a:hover { color: #38bdf8; }
+
+/* ── HERO ── */
+.hero {
+  text-align: center;
+  padding: 90px 24px 80px;
+  position: relative;
 }
 
-/* CARD */
-.card{
-  background:var(--surface);
-  border:1px solid var(--border);
-  padding:18px;
-  border-radius:12px;
-  transition:.3s;
-}
-.card:hover{transform:translateY(-6px);border-color:var(--accent)}
-.card h3{color:var(--accent);font-size:18px}
-.card p{color:var(--muted);font-size:13px;margin:8px 0}
-.card a{
-  display:inline-block;
-  margin-top:10px;
-  background:var(--accent);
-  color:#000;
-  padding:7px 12px;
-  border-radius:6px;
-  font-size:12px;
-  text-decoration:none;
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 600px;
+  height: 400px;
+  background: radial-gradient(ellipse, rgba(56,189,248,0.11) 0%, transparent 70%);
+  pointer-events: none;
 }
 
-/* FOOTER */
-footer{
-  text-align:center;
-  padding:40px;
-  color:var(--muted);
-  border-top:1px solid var(--border);
+.hero-tag {
+  display: inline-block;
+  background: rgba(56,189,248,0.1);
+  border: 1px solid rgba(56,189,248,0.25);
+  color: #38bdf8;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  padding: 5px 16px;
+  border-radius: 100px;
+  margin-bottom: 22px;
+  text-transform: uppercase;
 }
 
-/* scroll animation */
-.reveal{
-  opacity:0;
-  transform:translateY(30px);
-  transition:.7s;
+.hero h1 {
+  font-size: clamp(30px, 5.5vw, 54px);
+  font-weight: 800;
+  line-height: 1.15;
+  color: #fff;
+  margin-bottom: 16px;
 }
-.reveal.show{
-  opacity:1;
-  transform:translateY(0);
+
+.hero h1 span { color: #38bdf8; }
+
+.hero p {
+  font-size: 15px;
+  color: #94a3b8;
+  max-width: 480px;
+  margin: 0 auto 34px;
+  line-height: 1.7;
+  font-weight: 400;
 }
+
+.hero-btn {
+  display: inline-block;
+  background: #38bdf8;
+  color: #000;
+  font-weight: 700;
+  font-size: 14px;
+  padding: 13px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: box-shadow 0.25s, transform 0.2s;
+  box-shadow: 0 0 20px rgba(56,189,248,0.3);
+}
+
+.hero-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 35px rgba(56,189,248,0.5);
+}
+
+/* ── SECTION ── */
+.section {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 70px 24px;
+}
+
+.sec-title {
+  font-size: 24px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 6px;
+}
+
+.sec-title span { color: #38bdf8; }
+
+.sec-sub {
+  font-size: 14px;
+  color: #64748b;
+  margin-bottom: 38px;
+}
+
+/* ── CARDS GRID ── */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+.card {
+  background: #161b27;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 14px;
+  padding: 24px;
+  transition: transform 0.25s, border-color 0.25s, box-shadow 0.25s;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  border-radius: 14px 14px 0 0;
+}
+
+.card-blue::before   { background: linear-gradient(to right, #2563eb, #38bdf8); }
+.card-green::before  { background: linear-gradient(to right, #059669, #34d399); }
+.card-purple::before { background: linear-gradient(to right, #7c3aed, #a78bfa); }
+.card-orange::before { background: linear-gradient(to right, #d97706, #fbbf24); }
+
+.card:hover {
+  transform: translateY(-6px);
+  border-color: rgba(56,189,248,0.3);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(56,189,248,0.08);
+}
+
+.card-icon {
+  font-size: 30px;
+  margin-bottom: 14px;
+  display: block;
+}
+
+.card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #f1f5f9;
+  margin-bottom: 8px;
+}
+
+.card-desc {
+  font-size: 13px;
+  color: #64748b;
+  line-height: 1.7;
+  margin-bottom: 16px;
+}
+
+.tags {
+  display: flex;
+  gap: 7px;
+  flex-wrap: wrap;
+  margin-bottom: 18px;
+}
+
+.tag {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 3px 11px;
+  border-radius: 100px;
+  border: 1px solid;
+}
+
+.tag-blue   { background: rgba(56,189,248,0.08);  color: #38bdf8;  border-color: rgba(56,189,248,0.2);  }
+.tag-green  { background: rgba(52,211,153,0.08);  color: #34d399;  border-color: rgba(52,211,153,0.2);  }
+.tag-purple { background: rgba(167,139,250,0.08); color: #a78bfa;  border-color: rgba(167,139,250,0.2); }
+.tag-orange { background: rgba(251,191,36,0.08);  color: #fbbf24;  border-color: rgba(251,191,36,0.2);  }
+
+.card-link {
+  font-size: 13px;
+  font-weight: 600;
+  color: #38bdf8;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: gap 0.2s;
+}
+
+.card-link:hover { gap: 9px; }
+
+/* ── ABOUT ── */
+.about-wrap {
+  background: #161b27;
+  border: 1px solid rgba(255,255,255,0.07);
+  border-radius: 16px;
+  padding: 40px;
+}
+
+.about-text {
+  font-size: 14px;
+  color: #94a3b8;
+  line-height: 1.9;
+  max-width: 680px;
+}
+
+.about-text p + p { margin-top: 14px; }
+.about-text strong { color: #e2e8f0; }
+
+/* tools list */
+.tools-title {
+  font-size: 13px;
+  font-weight: 600;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-top: 28px;
+  margin-bottom: 12px;
+}
+
+.tool-chips {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.chip {
+  font-size: 13px;
+  font-weight: 500;
+  padding: 6px 16px;
+  border-radius: 8px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #cbd5e1;
+}
+
+/* ── DIVIDER ── */
+.divider {
+  border: none;
+  border-top: 1px solid rgba(255,255,255,0.06);
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+/* ── FOOTER ── */
+footer {
+  text-align: center;
+  padding: 36px 24px;
+  font-size: 13px;
+  color: #475569;
+  border-top: 1px solid rgba(255,255,255,0.06);
+}
+
+footer a { color: #38bdf8; text-decoration: none; }
+.footer-contact-label { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #38bdf8; margin-bottom: 10px; }
+.footer-name { font-size: 15px; font-weight: 700; color: #cbd5e1; margin-bottom: 14px; }
+.footer-links { display: flex; justify-content: center; gap: 24px; flex-wrap: wrap; margin-bottom: 20px; font-size: 13px; }
+.footer-links span { color: #64748b; }
+.footer-copy { font-size: 12px; color: #334155; border-top: 1px solid rgba(255,255,255,0.05); padding-top: 16px; margin-top: 4px; }
+.footer-copy { font-size: 12px; color: #374151; }
+
+@media (max-width: 600px) {
+  nav { padding: 16px 20px; }
+  .nav-links { gap: 20px; }
+  .about-wrap { padding: 28px; }
+}
+
 </style>
 </head>
-
 <body>
+
+<!-- NAV -->
+<nav>
+  <div class="logo">📊 <span>Rajeswari B</span> · Analytics</div>
+  <ul class="nav-links">
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
 
 <!-- HERO -->
 <div class="hero">
-  <h1>Data Analytics <span>Projects</span></h1>
-  <p>Turning raw data into insights using Power BI, Excel & dashboards</p>
-  <a class="btn" href="#projects">View Projects</a>
-</div>
-
-<!-- ABOUT -->
-<div class="section" id="about">
-  <div class="title">About <span>Me</span></div>
-
-  <div class="about reveal">
-    I am a Data Analyst passionate about building dashboards and turning raw data into meaningful insights.
-    I work with Power BI, Excel, and visualization tools to create business reports.
-  </div>
+  <div class="hero-tag">Data Analytics Portfolio</div>
+  <h1>Turning Data Into<br><span>Clear Insights</span></h1>
+  <p>Building interactive dashboards and visual stories with Power BI, Excel and data analytics.</p>
+  <a class="hero-btn" href="#projects">View My Projects →</a>
 </div>
 
 <!-- PROJECTS -->
 <div class="section" id="projects">
-  <div class="title">My <span>Projects</span></div>
+  <div class="sec-title">My <span>Projects</span></div>
+  <div class="sec-sub">Click any card to open the full project on GitHub</div>
 
   <div class="grid">
 
-    <div class="card reveal">
-      <h3>Zomato Dashboard</h3>
-      <p>Restaurant insights across 16 countries using Power BI.</p>
-      <a href="https://github.com/Raji-44/Data-Analytics-Projects/tree/main/Zomato-Dashboard">View</a>
+    <div class="card card-blue">
+      <span class="card-icon">🍽️</span>
+      <div class="card-title">Zomato Dashboard</div>
+      <div class="card-desc">Global restaurant insights across 16 countries — ratings, cuisines, city-level performance and trends.</div>
+      <div class="tags">
+        <span class="tag tag-blue">Power BI</span>
+        <span class="tag tag-blue">Global</span>
+      </div>
+      <a class="card-link" href="https://github.com/Raji-44/Data-Analytics-Projects/tree/main/Zomato-Dashboard" target="_blank">View Project →</a>
     </div>
 
-    <div class="card reveal">
-      <h3>Superstore Dashboard</h3>
-      <p>$2.30M sales & profit analysis with Power BI.</p>
-      <a href="https://github.com/Raji-44/Data-Analytics-Projects/tree/main/Superstore-Dashboard">View</a>
+    <div class="card card-green">
+      <span class="card-icon">🛒</span>
+      <div class="card-title">Superstore Dashboard</div>
+      <div class="card-desc">Sales and profit analysis across product categories, regions and customer segments.</div>
+      <div class="tags">
+        <span class="tag tag-green">Power BI</span>
+        <span class="tag tag-green">Sales</span>
+      </div>
+      <a class="card-link" href="https://github.com/Raji-44/Data-Analytics-Projects/tree/main/Superstore-Dashboard" target="_blank">View Project →</a>
     </div>
 
-    <div class="card reveal">
-      <h3>Women Insights</h3>
-      <p>Part-time job income & trends analysis.</p>
-      <a href="https://github.com/Raji-44/Data-Analytics-Projects/tree/main/Women-Part-Time-Work-Insights">View</a>
+    <div class="card card-purple">
+      <span class="card-icon">👩‍💼</span>
+      <div class="card-title">Women Work Insights</div>
+      <div class="card-desc">Income equity and part-time work participation analysis across demographics and regions.</div>
+      <div class="tags">
+        <span class="tag tag-purple">Power BI</span>
+        <span class="tag tag-purple">Social</span>
+      </div>
+      <a class="card-link" href="https://github.com/Raji-44/Data-Analytics-Projects/tree/main/Women-Part-Time-Work-Insights" target="_blank">View Project →</a>
     </div>
 
-    <div class="card reveal">
-      <h3>Vehicle Sales</h3>
-      <p>$9.8M Excel dashboard analysis.</p>
-      <a href="https://github.com/Raji-44/Data-Analytics-Projects/tree/main/Global-Vehicle-Sales-Dashboard">View</a>
+    <div class="card card-orange">
+      <span class="card-icon">🚗</span>
+      <div class="card-title">Vehicle Sales Dashboard</div>
+      <div class="card-desc">Excel dashboard covering the global vehicle market — manufacturers, segments and regional splits.</div>
+      <div class="tags">
+        <span class="tag tag-orange">Excel</span>
+        <span class="tag tag-orange">Sales</span>
+      </div>
+      <a class="card-link" href="https://github.com/Raji-44/Data-Analytics-Projects/tree/main/Global-Vehicle-Sales-Dashboard" target="_blank">View Project →</a>
     </div>
 
   </div>
 </div>
 
-<!-- FOOTER -->
-<footer>
-  Thank you for visiting | Contact: yourmail@gmail.com
-</footer>
+<hr class="divider">
 
-<!-- SCROLL EFFECT -->
-<script>
-const obs=new IntersectionObserver(e=>{
-  e.forEach(x=>{
-    if(x.isIntersecting){
-      x.target.classList.add("show");
-      obs.unobserve(x.target);
-    }
-  });
-});
-document.querySelectorAll(".reveal").forEach(e=>obs.observe(e));
-</script>
+<!-- ABOUT -->
+<div class="section" id="about">
+  <div class="sec-title">About <span>Me</span></div>
+  <div class="sec-sub">My background and tools I work with</div>
+
+  <div class="about-wrap">
+    <div class="about-text">
+      <p>Hi! I'm a <strong>Data Analytics enthusiast</strong> who loves turning raw datasets into clear, meaningful stories.</p>
+      <p>I build interactive dashboards that help people understand what the data is saying — whether it's restaurant trends, retail performance, or social equity patterns.</p>
+      <p>I'm always learning and growing my skills in data visualization and business intelligence. Feel free to explore my projects or reach out anytime!</p>
+    </div>
+
+    <div class="tools-title">Tools I Use</div>
+    <div class="tool-chips">
+      <span class="chip">📊 Power BI</span>
+      <span class="chip">📗 Microsoft Excel</span>
+      <span class="chip">📐 DAX</span>
+      <span class="chip">🔢 Pivot Tables</span>
+      <span class="chip">📈 Data Visualization</span>
+      <span class="chip">🔄 Power Query</span>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer id="contact">
+  <div class="footer-contact-label">Get In Touch</div>
+  <div class="footer-name">Rajeswari B</div>
+  <div class="footer-links">
+    <span>📍 Chennai</span>
+    <a href="tel:+916380651955">📞 6380651955</a>
+    <a href="mailto:yuvaraji2005@gmail.com">✉️ yuvaraji2005@gmail.com</a>
+    <a href="https://linkedin.com/in/rajeswari-b-40a96731a" target="_blank">🔗 LinkedIn</a>
+    <a href="https://github.com/Raji-44" target="_blank">🐙 GitHub</a>
+  </div>
+  <div class="footer-copy">© 2025 Rajeswari B · All Rights Reserved</div>
+</footer>
 
 </body>
 </html>
