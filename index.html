@@ -2,96 +2,61 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Raji | Data Analytics Portfolio</title>
-
-<!-- AOS Animation Library -->
-<link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+<title>Raji | Data Portfolio</title>
 
 <style>
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: #0b1220;
+  font-family: Arial, sans-serif;
+  background: #0f172a;
   color: white;
 }
 
-/* NAV */
-nav {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  padding: 15px;
-  background: rgba(0,0,0,0.4);
-  backdrop-filter: blur(10px);
-  z-index: 1000;
-}
-
-nav a {
-  color: white;
-  margin: 0 20px;
-  text-decoration: none;
-  font-weight: 600;
-}
-
-nav a:hover {
-  color: #38bdf8;
-}
-
-/* HERO */
-.hero {
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+/* TOP BAR */
+header {
+  padding: 20px;
   text-align: center;
-  background: radial-gradient(circle at top, #1e3a8a, #0b1220);
+  background: #1e293b;
 }
 
-.hero h1 {
-  font-size: 60px;
+header h1 {
   margin: 0;
+  font-size: 28px;
 }
 
-.hero p {
-  color: #cbd5e1;
+header p {
+  margin: 5px 0 0;
+  color: #94a3b8;
 }
 
 /* SECTION */
-section {
-  padding: 100px 10%;
-}
-
-h2 {
-  font-size: 30px;
-  margin-bottom: 30px;
+.container {
+  width: 85%;
+  margin: auto;
+  padding: 30px 0;
 }
 
 /* CARDS */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 20px;
 }
 
 .card {
-  background: rgba(255,255,255,0.05);
-  border: 1px solid rgba(255,255,255,0.1);
+  background: #1e293b;
   padding: 20px;
-  border-radius: 16px;
-  transition: 0.4s;
-  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  transition: 0.3s;
 }
 
 .card:hover {
-  transform: scale(1.05);
-  border-color: #38bdf8;
+  transform: translateY(-5px);
 }
 
 .card h3 {
   color: #38bdf8;
+  margin-top: 0;
 }
 
 .card a {
@@ -101,16 +66,18 @@ h2 {
   background: #38bdf8;
   color: black;
   text-decoration: none;
-  border-radius: 8px;
+  border-radius: 6px;
   font-weight: bold;
 }
 
-/* FOOTER */
-footer {
-  text-align: center;
-  padding: 30px;
-  border-top: 1px solid #1e293b;
-  color: #94a3b8;
+.card a:hover {
+  background: #0ea5e9;
+}
+
+/* ABOUT */
+.about {
+  margin-top: 20px;
+  color: #cbd5e1;
 }
 
 </style>
@@ -118,66 +85,52 @@ footer {
 
 <body>
 
-<nav>
-  <a href="#home">Home</a>
-  <a href="#projects">Projects</a>
-  <a href="#about">About</a>
-</nav>
+<header>
+  <h1>📊 Raji - Data Analytics Portfolio</h1>
+  <p>Power BI | Excel | Data Visualization</p>
+</header>
 
-<div class="hero" id="home" data-aos="fade-up">
-  <h1>Raji</h1>
-  <p>Data Analyst | Power BI | Excel | Data Visualization</p>
-</div>
+<div class="container">
 
-<section id="projects">
-  <h2 data-aos="fade-right">📊 Projects</h2>
+  <div class="about">
+    <h2>👋 About Me</h2>
+    <p>
+      I am a Data Analytics enthusiast skilled in Power BI and Excel.
+      I create dashboards to convert raw data into business insights.
+    </p>
+  </div>
+
+  <h2>📌 Projects</h2>
 
   <div class="grid">
 
-    <div class="card" data-aos="zoom-in">
+    <div class="card">
       <h3>Zomato Dashboard</h3>
-      <p>Global restaurant analysis across 16 countries.</p>
+      <p>Restaurant analysis across 16 countries.</p>
       <a href="https://github.com/Raji-44/Data-Analytics-Projects/tree/main/Zomato-Dashboard">View</a>
     </div>
 
-    <div class="card" data-aos="zoom-in">
+    <div class="card">
       <h3>Superstore Dashboard</h3>
       <p>$2.30M sales & profit analysis.</p>
       <a href="https://github.com/Raji-44/Data-Analytics-Projects/tree/main/Superstore-Dashboard">View</a>
     </div>
 
-    <div class="card" data-aos="zoom-in">
+    <div class="card">
       <h3>Women Insights</h3>
       <p>Income & job trends analysis.</p>
       <a href="https://github.com/Raji-44/Data-Analytics-Projects/tree/main/Women-Part-Time-Work-Insights">View</a>
     </div>
 
-    <div class="card" data-aos="zoom-in">
+    <div class="card">
       <h3>Vehicle Sales</h3>
       <p>$9.8M Excel dashboard analysis.</p>
       <a href="https://github.com/Raji-44/Data-Analytics-Projects/tree/main/Global-Vehicle-Sales-Dashboard">View</a>
     </div>
 
   </div>
-</section>
 
-<section id="about" data-aos="fade-up">
-  <h2>👨‍💻 About Me</h2>
-  <p>
-    I am a Data Analytics enthusiast skilled in Power BI, Excel, and data storytelling.
-    I convert raw data into meaningful business insights using dashboards and visualizations.
-  </p>
-</section>
-
-<footer>
-  © 2026 Raji | Data Analytics Portfolio
-</footer>
-
-<!-- AOS Script -->
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-<script>
-  AOS.init({ duration: 1000 });
-</script>
+</div>
 
 </body>
 </html>
