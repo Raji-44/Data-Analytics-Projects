@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <title>Raji | Data Portfolio</title>
@@ -7,89 +7,92 @@
 <style>
 body {
   margin: 0;
-  font-family: Arial;
-  background: #f5f7fb;
-  color: #111;
+  font-family: Arial, sans-serif;
+  background: #0b0f19;
+  color: white;
 }
 
 /* HEADER */
-.header {
-  background: #1f3b57;
-  color: white;
+header {
   padding: 25px;
+  background: #141a2a;
   text-align: center;
 }
 
-.header h1 {
+header h1 {
   margin: 0;
-  font-size: 26px;
+  font-size: 28px;
 }
 
-.header p {
+header p {
+  color: #aaa;
   margin-top: 5px;
-  font-size: 14px;
-  opacity: 0.8;
-}
-
-/* CONTAINER */
-.container {
-  width: 85%;
-  margin: auto;
-  padding: 25px 0;
 }
 
 /* SECTION TITLE */
-h2 {
-  margin-top: 30px;
-  color: #1f3b57;
+.section-title {
+  margin: 20px 0 10px 20px;
+  font-size: 18px;
+  color: #38bdf8;
 }
 
-/* GRID */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+/* ROW (Netflix style scroll) */
+.row {
+  display: flex;
+  overflow-x: auto;
+  padding: 10px 20px;
   gap: 15px;
+  scroll-behavior: smooth;
+}
+
+.row::-webkit-scrollbar {
+  display: none;
 }
 
 /* CARD */
 .card {
-  background: white;
+  min-width: 260px;
+  background: #1a2236;
+  border-radius: 12px;
   padding: 15px;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: 0.3s;
+  flex-shrink: 0;
+}
+
+.card:hover {
+  transform: scale(1.08);
+  background: #24304d;
 }
 
 .card h3 {
   margin: 0;
-  color: #1f3b57;
+  color: #38bdf8;
 }
 
 .card p {
   font-size: 13px;
-  color: #555;
+  color: #ccc;
 }
 
 .card a {
   display: inline-block;
   margin-top: 10px;
-  padding: 6px 10px;
-  background: #1f3b57;
-  color: white;
+  padding: 7px 12px;
+  background: #38bdf8;
+  color: black;
   text-decoration: none;
-  border-radius: 5px;
-  font-size: 13px;
+  border-radius: 6px;
+  font-weight: bold;
 }
 
 .card a:hover {
-  background: #163047;
+  background: #0ea5e9;
 }
 
 /* ABOUT */
 .about {
-  background: white;
-  padding: 15px;
-  border-radius: 10px;
-  margin-top: 10px;
+  padding: 20px;
+  color: #aaa;
 }
 
 </style>
@@ -97,47 +100,41 @@ h2 {
 
 <body>
 
-<div class="header">
+<header>
   <h1>📊 Raji - Data Analytics Portfolio</h1>
   <p>Power BI • Excel • Data Visualization</p>
+</header>
+
+<div class="about">
+  I am a Data Analytics enthusiast who builds dashboards using Power BI and Excel.
 </div>
 
-<div class="container">
+<h2 class="section-title">🔥 Featured Projects</h2>
 
-  <h2>👋 About</h2>
-  <div class="about">
-    I am a Data Analytics enthusiast skilled in Power BI and Excel.  
-    I build dashboards that turn raw data into business insights.
+<div class="row">
+
+  <div class="card">
+    <h3>Zomato Dashboard</h3>
+    <p>Global restaurant analysis (16 countries)</p>
+    <a href="https://github.com/Raji-44/Data-Analytics-Projects/tree/main/Zomato-Dashboard">View</a>
   </div>
 
-  <h2>📌 Projects</h2>
+  <div class="card">
+    <h3>Superstore Dashboard</h3>
+    <p>$2.30M sales & profit analysis</p>
+    <a href="https://github.com/Raji-44/Data-Analytics-Projects/tree/main/Superstore-Dashboard">View</a>
+  </div>
 
-  <div class="grid">
+  <div class="card">
+    <h3>Women Insights</h3>
+    <p>Income & job trend analysis</p>
+    <a href="https://github.com/Raji-44/Data-Analytics-Projects/tree/main/Women-Part-Time-Work-Insights">View</a>
+  </div>
 
-    <div class="card">
-      <h3>Zomato Dashboard</h3>
-      <p>16-country restaurant analysis</p>
-      <a href="https://github.com/Raji-44/Data-Analytics-Projects/tree/main/Zomato-Dashboard">View</a>
-    </div>
-
-    <div class="card">
-      <h3>Superstore Dashboard</h3>
-      <p>$2.30M sales analysis</p>
-      <a href="https://github.com/Raji-44/Data-Analytics-Projects/tree/main/Superstore-Dashboard">View</a>
-    </div>
-
-    <div class="card">
-      <h3>Women Insights</h3>
-      <p>Job & income patterns</p>
-      <a href="https://github.com/Raji-44/Data-Analytics-Projects/tree/main/Women-Part-Time-Work-Insights">View</a>
-    </div>
-
-    <div class="card">
-      <h3>Vehicle Sales</h3>
-      <p>$9.8M Excel analysis</p>
-      <a href="https://github.com/Raji-44/Data-Analytics-Projects/tree/main/Global-Vehicle-Sales-Dashboard">View</a>
-    </div>
-
+  <div class="card">
+    <h3>Vehicle Sales</h3>
+    <p>$9.8M Excel dashboard</p>
+    <a href="https://github.com/Raji-44/Data-Analytics-Projects/tree/main/Global-Vehicle-Sales-Dashboard">View</a>
   </div>
 
 </div>
